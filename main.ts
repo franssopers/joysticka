@@ -1,7 +1,11 @@
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 	
 })
+joystickbit.onButtonEvent(joystickbit.JoystickBitPin.P12, joystickbit.ButtonType.down, function () {
+    basic.clearScreen()
+})
 joystickbit.initJoystickBit()
+led.setBrightness(8)
 basic.forever(function () {
     if (joystickbit.getRockerValue(joystickbit.rockerType.X) <= 200) {
         basic.showArrow(ArrowNames.East)
